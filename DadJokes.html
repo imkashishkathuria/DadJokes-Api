@@ -59,6 +59,27 @@
             jokes_btn.addEventListener("click",generateJokes);
             generateJokes();
     </script>
+<!--     Javascript code to do the same using async and await  -->
+<!--     <script>
+    const jokes = document.querySelector("#btn-click");
+            const jokes_btn = document.querySelector("#next");
+            const generateJokes = async() => {
+                try{
+                const setHeaders = {
+                    headers: {
+                        Accept: 'application/json'
+                    }
+                }
+                const res=await fetch("https://icanhazdadjoke.com/",setHeaders);
+                const data=await res.json();
+                jokes.innerHTML=data.joke;
+                }catch(error){
+                    console.log("Error fetching data....",error);
+                }
+            }
+            jokes_btn.addEventListener("click", generateJokes);
+                generateJokes();
+    </script> -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
 
